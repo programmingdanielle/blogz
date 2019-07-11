@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+                {% block title %}{% endblock %}
+        </title>
+    </head>
+
+    <body>
+
+    <div class="nav">
+        <a href="/blog">Main Blog</a> - <a href="/newpost">Make a New Post</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    <ul>
+    {% for category,message in messages %}
+        <li class="{{category}}">{{message}}</li>
+    {% endfor %}
+    </ul>
+    {% endwith %}
+
+
+        {% block content %}
+
+        
+
+        {% endblock %}
+    </body>
+
+</html>
