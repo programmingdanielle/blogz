@@ -4,4 +4,12 @@
 
 <h1>Main Page of the Blog!</h1>
 
+{% for user in userlist %}
+<ul>
+    <li>
+        <a href="/?id={{user.id}}">{{user.email}}</a>
+    </li>
+</ul>
+{% endfor %}
+
 {% endblock %}

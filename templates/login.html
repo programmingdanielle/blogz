@@ -1,0 +1,36 @@
+{% extends "base.html" %}\
+
+{% block title %}
+    Login to Blogz
+{% endblock %}
+
+{% block content %}
+
+<h1>Login to Blogz</h1>
+
+<form method="POST">
+    <table>
+        <tr>
+            <td>
+                <label for="email">Email:</label>
+            </td>
+            <td>
+                <input name="email" type="email" value="{{email}}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="password">Password:</label>
+            </td>
+            <td>
+                <input name="password" type="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Login">
+    </form>
+
+    <a href="/signup">If you don't have an account, click here!</a>
+
+{% endblock %}

@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}Main Page of Blog
-{% endblock %}
-
 {% block content %}
-<h1>Build a Blog</h1>
+
+<h1>Posts by {{user.email}}</h1>
+
+<br>
+
 {% for entry in blog %}
         <br>
         <a href="/blog?id={{entry.id}}"><h1>{{entry.title}}</h1></a>
         <br />
         {{entry.body}}
         <br />
-        
+        <i>written by {{user.email}}</i>
         <hr>
 {% endfor %}
-
 
 {% endblock %}
