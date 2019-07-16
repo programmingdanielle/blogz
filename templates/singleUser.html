@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Posts by {{user.email}} ...</h1>
+
+<br>
+
+{% for entry in blog %}
+        <br>
+        <a href="/blog?id={{entry.id}}"><h1>{{entry.title}}</h1></a>
+        <br />
+        {{entry.body}}
+        <br />
+        <i>written by <a href="/?id={{entry.owner.id}}">{{entry.owner.email}}</a></i>
+        <hr>
+{% endfor %}
+
+{% endblock %}

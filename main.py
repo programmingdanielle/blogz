@@ -44,7 +44,7 @@ def index():
     if authorid is not None:
         user = User.query.get(authorid)
         blog = Blog.query.filter_by(owner_id=authorid)
-        return render_template("authorentry.html", user=user, blog=blog)
+        return render_template("singleUser.html", user=user, blog=blog)
     return render_template("index.html", userlist=userlist)
 
 @app.route("/signup", methods=["POST", "GET"])
@@ -116,7 +116,7 @@ def blog():
     idname = request.args.get("id")
     if idname is not None:
         entry = Blog.query.get(idname)
-        return render_template("test.html", entry=entry, user=user)
+        return render_template("test.html", entry=entry)
     return render_template("blog.html", blog=blog)
 
 @app.route("/newpost", methods=["POST", "GET"])

@@ -6,10 +6,12 @@ My Blog: {{entry.title}}
 
 {% block content %}
 
+<h2>Test</h2>
 <h1>{{entry.title}}</h1>
 <br />
 {{entry.body}}
 <br />
-<i>written by {{entry.owner}}</i>
+<br />
+<i>written by <a href="/?id={{entry.owner.id}}">{{entry.owner.email}}</a></i>
 
 {% endblock %}
