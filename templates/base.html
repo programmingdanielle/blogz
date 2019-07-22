@@ -8,9 +8,16 @@
 
     <body>
 
-    <div class="nav">
-        <a href="/">Home</a> - <a href="/blog">Main Blog</a> - <a href="/newpost">Make a New Post</a> - <a href="/login">Login</a> - <a href="/signup">Signup</a> - <a href="/logout">Logout</a>
-    </div>
+<div style="float:right">
+    {% if "email" in session %}
+        {{session["email"]}} <br>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a> | <a href="/signup">Signup</a>
+    {% endif %}
+</div>
+
+    <a href="/">Home</a> | <a href="/blog">Main Blog</a> | <a href="/newpost">Make a New Post</a>
 
     {% with messages = get_flashed_messages(with_categories=True) %}
     <ul>
